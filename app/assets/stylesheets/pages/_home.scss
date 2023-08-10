@@ -1,1 +1,16 @@
 // Specific CSS for your home-page
+.list-form {
+  width: 600px;
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 20px;
+}
+
+.button {
+  margin: 20px;
+}
