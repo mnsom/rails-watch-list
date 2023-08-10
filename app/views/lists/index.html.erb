@@ -1,14 +1,24 @@
 <div class="container m-3">
-  <h1>Movie lists 🍿</h1>
-  <% @lists.each do |list| %>
-    <p><%= link_to list.name, list_path(list) %></p>
-  <% end %>
-  <%= link_to "Create a new list", new_list_path, class: "btn btn-info"%>
-</div>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
-  <div class="container">
-    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
-    <p>Change your life and learn to code at one of our campuses around the world.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
+  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "banner.jpg" %>);">
+    <div class="container">
+      <h1>Create your movie lists 🎥</h1>
+    </div>
+  </div>
+  <div class="list">
+    <div class="item-left">
+      <h1>My lists 🍿</h1>
+    </div>
+    <div class="item-right">
+      <%= link_to "Create a new list", new_list_path, class: "btn btn-info mb-2"%>
+    </div>
+  </div>
+  <div class="cards">
+    <% @lists.each do |list| %>
+      <%= link_to list_path(list) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random/?<%= list.name %>)">
+          <p><%= list.name %></p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
