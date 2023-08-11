@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/random/?<%= @list.name %>);">
+  <div class="banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%=  @list.photo.attached? ? cl_image_path(@list.photo.key) : "https://source.unsplash.com/random/?#{@list.name.gsub(" ", "")}" %>);">
     <div class="container">
       <h1><%= @list.name  %></h1>
     </div>
